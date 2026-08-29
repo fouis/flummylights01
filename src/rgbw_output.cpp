@@ -16,8 +16,8 @@ namespace
     constexpr uint16_t T1H = 6;
     constexpr uint16_t T1L = 6;
 
-    // Generous latch/reset time after every frame.
-    constexpr uint16_t LATCH_US = 300;
+    // Conservative latch/reset time while checking the occasional full-strip flash.
+    constexpr uint16_t LATCH_US = 100;
 
     uint8_t outputPin = 0;
     uint16_t configuredLedCount = 0;
