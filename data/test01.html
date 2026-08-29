@@ -1,0 +1,103 @@
+<form action="/"  method="post">
+    <div class="row g-2" > 
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="border border-2 rounded p-1 h-100">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">LED Anzahl</span>
+                    <input type="text" class="form-control" name="NUMLEDS" value="%NUMLEDS%">
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="border border-2 rounded p-1 h-100">
+                <div class="row">
+                    <div class="col">
+                        <h3>Wave</h3>
+                    </div>
+                    <div class="col text-end">
+                        (<span id="waveHueInput">%WAVEHUE%</span>,<span id="waveSatInput">%WAVESAT%</span>,<span id="waveValInput">%WAVEVAL%</span>)
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-2">
+                        <label for="waveHueRange" class="form-label">Hue</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="range" class="form-range hue-slider" name="WAVEHUE" id="waveHueRange" min="0" max="255" value="%WAVEHUE%" step="1" onchange="document.getElementById('waveHueInput').innerHTML=this.value;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="waveSatRange" class="form-label">Sat</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="range" class="form-range" name="WAVESAT" id="waveSatRange" min="0" max="255" value="%WAVESAT%" step="1" onchange="document.getElementById('waveSatInput').innerHTML=this.value;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="waveValRange" class="form-label">Val</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="range" class="form-range" name="WAVEVAL" id="waveValRange" min="0" max="255" value="%WAVEVAL%" step="1" onchange="document.getElementById('waveValInput').innerHTML=this.value;">
+                    </div>
+                </div>
+
+            </div>
+        </div>        
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="border border-2 rounded p-1 h-100">
+                <div class="row">
+                    <div class="col">
+                        <h3>Sparkle</h3>
+                    </div>
+                    <div class="col text-end">
+                        (<span id="hueInput">%SPARKLEHUE%</span>,<span id="satInput">%SPARKLESAT%</span>,<span id="valInput">%SPARKLEVAL%</span>)
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-2">
+                        <label for="hueRange" class="form-label">Hue</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="range" class="form-range hue-slider" name="SPARKLEHUE" id="hueRange" min="0" max="255" value="%SPARKLEHUE%" step="1" onchange="document.getElementById('hueInput').innerHTML=this.value;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="satRange" class="form-label">Sat</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="range" class="form-range" name="SPARKLESAT" id="satRange" min="0" max="255" value="%SPARKLESAT%" step="1" onchange="document.getElementById('satInput').innerHTML=this.value;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="valRange" class="form-label">Val</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="range" class="form-range" name="SPARKLEVAL" id="valRange" min="0" max="255" value="%SPARKLEVAL%" step="1" onchange="document.getElementById('valInput').innerHTML=this.value;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="perc" class="form-label">Perc</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="range" class="form-range" name="SPARKLEPERC" id="valRange" min="0" max="1" value="%SPARKLEPERC%" step="0.05">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-lg-3 col-md-4 col-6 d-flex justify-content-center mx-auto">
+        <input type="submit" class="btn btn-success btn-lg" name="test01" value="Submit">
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,118 @@
+<form action="/"  method="post">
+    <div class="row g-2">
+        <div class="col-lg-3 col-md-4 col-6 ">
+            <div class="border border-2 rounded h-100">
+                <fieldset>
+                    <div class="form-check">
+                        <input class="form-check-input" type='checkbox' id='BIKE' name='BIKE' value='BIKE' %BIKE%>
+                        <label class="form-check-label" for='BIKE'> I have a bike</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type='checkbox' id='DODGE' name='DODGE' value='DODGE' %DODGE%>
+                        <label class="form-check-label" for='DODGE'> I have a dodge</label>
+                    </div>
+                </fieldset>
+                <p/>
+                <fieldset>
+                    <div class="form-check">
+                        <input class="form-check-input" type='radio' id='color1' name='COLOR' value='0' %COLOR0%>
+                        <label class="form-check-label" for='color1'> I am green</label><br>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type='radio' id='color2' name='COLOR' value='1' %COLOR1%>
+                    <label class="form-check-label" for='color2'> I am blue</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type='radio' id='color3' name='COLOR' value='2' %COLOR2%>
+                        <label class="form-check-label" for='color3'> I am red</label>
+                        </div>
+                    </fieldset>
+                <fieldset>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="options" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="options" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="options" value="option3" disabled>
+                        <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                    </div>
+                </fieldset>
+            </div>
+            
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="border border-2 rounded h-100">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" name="BOOSTER" %BOOSTER%>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Booster</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" name="OVERDRIVE" %OVERDRIVE%>
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Overdrive</label>
+                </div>
+                <p/>
+                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+                <label class="btn btn-secondary" for="option1">Checked</label>
+
+                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                <label class="btn btn-secondary" for="option2">Radio</label>
+
+                <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" disabled>
+                <label class="btn btn-secondary" for="option3">Disabled</label>
+
+                <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+                <label class="btn btn-secondary" for="option4">Radio</label>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="border border-2 rounded h-100">
+                <select class="form-select" name="INSTRUMENT">
+                    <option value="0" %INSTRUMENT0%>Trompete</option>
+                    <option value="1" %INSTRUMENT1%>Geige</option>
+                    <option value="2" %INSTRUMENT2%>Fagott</option>
+                    <option value="3" %INSTRUMENT3%>Hang</option>
+                </select>
+                <p/>
+                <label for="customRange1" class="form-label">Gewicht: </label><output>%WEIGHT%</output>
+                <input type="range" class="form-range" id="customRange1" name="WEIGHT" min="0" max="10" value="%WEIGHT%" step="0.1" oninput="this.previousElementSibling.value = this.value">
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="border border-2 rounded h-100">
+                Sepp
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="border border-2 rounded">
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                    <label for="inputPassword6" class="col-form-label">Password</label>
+                    </div>
+                    <div class="col-auto">
+                    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                    <div class="col-auto">
+                    <span id="passwordHelpInline" class="form-text">
+                        Must be 8-20 characters long.
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="border border-2 rounded h-100">
+                hallo
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-6 d-flex justify-content-center mx-auto">
+        <input type="submit" class="btn btn-success btn-lg" name="red" value="Submit">
+        </div>
+    </div>
+</form>
+

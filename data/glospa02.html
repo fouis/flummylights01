@@ -1,0 +1,77 @@
+<form action="/" method="post">
+    <div class="row g-2">
+        <div class="col-lg-6 col-12">
+            <div class="border border-2 rounded p-2 h-100">
+                <h5>Warm wobble</h5>
+
+                <div class="row align-items-center mb-2">
+                    <div class="col-4">
+                        <label for="waveTime" class="form-label">Time frequency</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="WAVETIME" id="waveTime"
+                               min="0.02" max="0.60" value="%WAVETIME%" step="0.01"
+                               oninput="document.getElementById('waveTimeValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="waveTimeValue">%WAVETIME%</span> Hz
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <label for="waveSpace" class="form-label">Space frequency</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="WAVESPACE" id="waveSpace"
+                               min="0.20" max="4.00" value="%WAVESPACE%" step="0.10"
+                               oninput="document.getElementById('waveSpaceValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="waveSpaceValue">%WAVESPACE%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-12">
+            <div class="border border-2 rounded p-2 h-100">
+                <h5>Sparkles</h5>
+
+                <div class="row align-items-center mb-2">
+                    <div class="col-4">
+                        <label for="sparkTime" class="form-label">Flash frequency</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="SPARKTIME" id="sparkTime"
+                               min="0.05" max="1.00" value="%SPARKTIME%" step="0.01"
+                               oninput="document.getElementById('sparkTimeValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="sparkTimeValue">%SPARKTIME%</span> Hz
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <label for="sparkSpace" class="form-label">Sparkle points</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="SPARKSPACE" id="sparkSpace"
+                               min="1" max="12" value="%SPARKSPACE%" step="1"
+                               oninput="document.getElementById('sparkSpaceValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="sparkSpaceValue">%SPARKSPACE%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-lg-3 col-md-4 col-6 d-flex justify-content-center mx-auto">
+            <input type="submit" class="btn btn-success btn-lg" name="glospa02" value="Submit">
+        </div>
+    </div>
+</form>
