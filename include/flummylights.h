@@ -60,6 +60,8 @@ class LightShow
     virtual void readPersistent(Preferences * p);
     // process HTTP form data, returns true, if parameters changed
     virtual bool processForm(AsyncWebServerRequest *request);
+    // set one parameter by key; optionally persist only that parameter
+    virtual bool setParameter(const String& key, const String& value, Preferences *p = nullptr);
     // initialize the light show before running
     virtual void initShow(void) = 0;
     // initialize after parameter change

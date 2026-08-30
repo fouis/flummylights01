@@ -20,6 +20,8 @@ class Parameter
         virtual void filterWeb(String * s) = 0;
         // process the web form, setting new parameter
         virtual void processForm(AsyncWebServerRequest *request) = 0;
+        // set a single parameter from a textual web/API value
+        virtual void setFromString(const String& value) = 0;
     protected:
 
     private:
@@ -45,6 +47,7 @@ class Uint8Parameter:public Parameter
         
         // process the web form, setting new parameter
         void processForm(AsyncWebServerRequest *request);
+        void setFromString(const String& value);
         
 };
 
@@ -68,6 +71,7 @@ class BoolCheckedParameter:public Parameter
         
         // process the web form, setting new parameter
         void processForm(AsyncWebServerRequest *request);
+        void setFromString(const String& value);
         
 
 };
@@ -92,6 +96,7 @@ class RadioCheckedParameter:public Parameter
         
         // process the web form, setting new parameter
         void processForm(AsyncWebServerRequest *request);
+        void setFromString(const String& value);
         
 
 };
@@ -116,6 +121,7 @@ class SelectParameter:public Parameter
         
         // process the web form, setting new parameter
         void processForm(AsyncWebServerRequest *request);
+        void setFromString(const String& value);
         
 
 };
@@ -140,6 +146,7 @@ class FloatParameter:public Parameter
         
         // process the web form, setting new parameter
         void processForm(AsyncWebServerRequest *request);
+        void setFromString(const String& value);
         
 };
 
@@ -163,6 +170,7 @@ class IntParameter:public Parameter
         
         // process the web form, setting new parameter
         void processForm(AsyncWebServerRequest *request);
+        void setFromString(const String& value);
         
 };
 

@@ -157,3 +157,68 @@ if (urlParams.has('color'))
 	}	
 }
 */
+
+// Live parameter controls -------------------------------------------------
+// Range controls are sent while dragging (throttled), then persisted once
+// when the user releases/commits the control.
+const liveParameterTimers = new WeakMap();
+const liveParameterDelayMs = 75;
+
+function sendLiveParameter(control, save)
+{
+    if (!control.name)
+        return;
+
+    const data = new URLSearchParams();
+    data.append('key', control.name);
+    data.append('value', control.value);
+    data.append('save', save ? '1' : '0');
+
+    fetch('/api/parameter', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: data.toString()
+    }).catch(function(error) {
+        console.error('Live parameter update failed:', error);
+    });
+}
+
+function scheduleLiveParameter(control)
+{
+    const oldTimer = liveParameterTimers.get(control);
+    if (oldTimer)
+        clearTimeout(oldTimer);
+
+    const timer = setTimeout(function() {
+        liveParameterTimers.delete(control);
+        sendLiveParameter(control, false);
+    }, liveParameterDelayMs);
+
+    liveParameterTimers.set(control, timer);
+}
+
+function persistLiveParameter(control)
+{
+    const oldTimer = liveParameterTimers.get(control);
+    if (oldTimer)
+    {
+        clearTimeout(oldTimer);
+        liveParameterTimers.delete(control);
+    }
+    sendLiveParameter(control, true);
+}
+
+function initLiveParameters()
+{
+    document.querySelectorAll('#nav-parameter input[type="range"][name]').forEach(function(control) {
+        control.addEventListener('input', function() {
+            scheduleLiveParameter(control);
+        });
+        control.addEventListener('change', function() {
+            persistLiveParameter(control);
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initLiveParameters);
+

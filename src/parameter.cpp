@@ -49,8 +49,13 @@ void Uint8Parameter::processForm(AsyncWebServerRequest *request)
 {
     if(request->hasParam(key,true))
     {
-        *parval=request->getParam(key,true)->value().toInt();
+        setFromString(request->getParam(key,true)->value());
     }
+}
+
+void Uint8Parameter::setFromString(const String& value)
+{
+    *parval=value.toInt();
 }
 
 
@@ -93,13 +98,17 @@ void BoolCheckedParameter::processForm(AsyncWebServerRequest *request)
 {
     if(request->hasParam(key,true))
     {
-        //*parval=request->getParam(key,true)->value().toInt();
         *parval=true;
     }
     else
     {
         *parval=false;
     }
+}
+
+void BoolCheckedParameter::setFromString(const String& value)
+{
+    *parval = value == "1" || value == "true" || value == "on" || value == "checked";
 }
 
 
@@ -140,8 +149,13 @@ void RadioCheckedParameter::processForm(AsyncWebServerRequest *request)
 {
     if(request->hasParam(key,true))
     {
-        *parval=request->getParam(key,true)->value().toInt();
+        setFromString(request->getParam(key,true)->value());
     }
+}
+
+void RadioCheckedParameter::setFromString(const String& value)
+{
+    *parval=value.toInt();
 }
 
 /**
@@ -179,8 +193,13 @@ void SelectParameter::processForm(AsyncWebServerRequest *request)
 {
     if(request->hasParam(key,true))
     {
-        *parval=request->getParam(key,true)->value().toInt();
+        setFromString(request->getParam(key,true)->value());
     }
+}
+
+void SelectParameter::setFromString(const String& value)
+{
+    *parval=value.toInt();
 }
 
 
@@ -219,8 +238,13 @@ void FloatParameter::processForm(AsyncWebServerRequest *request)
 {
     if(request->hasParam(key,true))
     {
-        *parval=request->getParam(key,true)->value().toFloat();
+        setFromString(request->getParam(key,true)->value());
     }
+}
+
+void FloatParameter::setFromString(const String& value)
+{
+    *parval=value.toFloat();
 }
 
 /**
@@ -258,8 +282,13 @@ void IntParameter::processForm(AsyncWebServerRequest *request)
 {
     if(request->hasParam(key,true))
     {
-        *parval=request->getParam(key,true)->value().toInt();
+        setFromString(request->getParam(key,true)->value());
     }
+}
+
+void IntParameter::setFromString(const String& value)
+{
+    *parval=value.toInt();
 }
 
 

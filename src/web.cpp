@@ -244,6 +244,48 @@ void initWeb(void)
     request->send(SPIFFS, "/index.html", String(), false, processor);
   });
 
+  // Lightweight endpoint for immediate parameter updates.
+  // POST fields: key=<parameter>, value=<value>, save=0|1
+  server.on("/api/parameter", HTTP_POST, [](AsyncWebServerRequest *request){
+    if (!request->hasParam("key", true) || !request->hasParam("value", true))
+    {
+      request->send(400, "text/plain", "Missing key or value");
+      return;
+    }
+
+    const String key = request->getParam("key", true)->value();
+    const String value = request->getParam("value", true)->value();
+    const bool save = request->hasParam("save", true) && request->getParam("save", true)->value() == "1";
+    bool changed = false;
+
+    if (xSemaphoreTake(lightShowMutex, portMAX_DELAY) == pdTRUE)
+    {
+      const int active = activelightShow.load();
+      if (isValidShowIndex(active))
+      {
+        if (save)
+        {
+          preferences.begin(lightShows[active]->getShowKey(), false);
+          changed = lightShows[active]->setParameter(key, value, &preferences);
+          preferences.end();
+        }
+        else
+        {
+          changed = lightShows[active]->setParameter(key, value);
+        }
+
+        if (changed)
+        {
+          lightShows[active]->parChanged();
+        }
+      }
+      xSemaphoreGive(lightShowMutex);
+    }
+
+    if (changed) request->send(204);
+    else request->send(404, "text/plain", "Unknown parameter");
+  });
+
   // Route to load style.css file
   server.on("/style.css", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(SPIFFS, "/style.css", "text/css");

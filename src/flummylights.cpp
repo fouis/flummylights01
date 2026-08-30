@@ -201,3 +201,21 @@ bool LightShow::processForm(AsyncWebServerRequest *request)
 }
 
 
+bool LightShow::setParameter(const String& key, const String& value, Preferences *p)
+{
+  for(std::size_t i = 0; i < allPars.size(); ++i)
+  {
+    if (key == allPars[i]->key)
+    {
+      allPars[i]->setFromString(value);
+      if (p != nullptr)
+      {
+        allPars[i]->writePers(p);
+      }
+      return true;
+    }
+  }
+  return false;
+}
+
+
