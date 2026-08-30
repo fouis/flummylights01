@@ -1,2 +1,3 @@
-Lauflicht. Eine neue Show.
+"Lauflicht01". Eine neue Show.
 
+Eine leuchtende LED wandert alternierend die Kette entlang, von Pos 0 bis 31 und wieder zurück von 31 bis 0 etc. Geschwindigkeit einstellbar zwischen 1LED/s (also ca. 30s für die ganze Kette) bis 10LED/s (also ca. 6s für die ganze Kette), Helligkeit voll, Sättigung voll, Der Farbton wird mit einem unabhängigen Generator moduliert durch alle Farbtöne, Frequenz Farbtonmod 0.03Hz bis 0.5Hz. LED jeweils beim wechseln zur nächsten LED überblenden. 

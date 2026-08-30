@@ -125,6 +125,25 @@ String processor(const String& var)
     }
     else return String();
   }
+  else if (var=="INFOBOX")
+  {
+    int active = activelightShow.load();
+    if (isValidShowIndex(active))
+    {
+      String filename="/";
+      filename+=String(lightShows[active]->getShowKey());
+      filename+="-info.html";
+      if (SPIFFS.exists(filename))
+      {
+        includeFile=SPIFFS.open(filename, "r");
+        String page = includeFile.readString();
+        includeFile.close();
+        return page;
+      }
+      return "<p>No additional information is available for this show.</p>";
+    }
+    return String();
+  }
   else if (var=="SHOWOPTIONS")
   {
     return getOptions(); 

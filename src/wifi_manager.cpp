@@ -14,6 +14,7 @@ static void saveConfigCallback()
 void initWifi(bool clearWifi)
 {
     wifiConfigChanged = false;
+    WiFi.setHostname("flummy");
     WiFiManager wifiManager;
 
     wifiManager.setAPStaticIPConfig(
