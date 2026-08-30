@@ -1,0 +1,12 @@
+* text=auto
+
+*.cpp text eol=lf
+*.h   text eol=lf
+*.inc text eol=lf
+*.html text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.ini text eol=lf
+*.csv text eol=lf
+*.txt text eol=lf
+*.ps1 text eol=crlf
