@@ -16,6 +16,7 @@ void registerLightShows(void)
     #include "glospa01.inc"
     #include "glospa02.inc"
     #include "lauflicht01.inc"
+    #include "blinky01.inc"
     //#include "glospa02diag.inc"
     //#include "comptest.inc"
     

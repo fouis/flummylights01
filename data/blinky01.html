@@ -1,0 +1,23 @@
+<form action="/" method="post">
+    <div class="row g-2">
+        <div class="col-lg-6 col-12">
+            <div class="border border-2 rounded p-2 h-100">
+                <h5>LED selection</h5>
+
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <label for="ledNumber" class="form-label">LED number</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="LED" id="ledNumber"
+                               min="0" max="31" value="%LED%" step="1"
+                               oninput="document.getElementById('ledNumberValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="ledNumberValue">%LED%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

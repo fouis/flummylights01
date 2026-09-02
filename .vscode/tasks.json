@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PlatformIO: Upload Firmware + Filesystem",
+      "type": "shell",
+      "command": "& 'C:/Users/klaus/.platformio/penv/Scripts/platformio.exe' run -t upload; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; & 'C:/Users/klaus/.platformio/penv/Scripts/platformio.exe' run -t uploadfs; exit $LASTEXITCODE",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
