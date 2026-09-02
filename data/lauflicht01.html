@@ -1,0 +1,57 @@
+<form action="/" method="post">
+    <div class="row g-2">
+        <div class="col-lg-6 col-12">
+            <div class="border border-2 rounded p-2 h-100">
+                <h5>Movement</h5>
+
+                <div class="row align-items-center mb-2">
+                    <div class="col-4">
+                        <label for="runSpeed" class="form-label">Speed</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="SPEED" id="runSpeed"
+                               min="1.0" max="10.0" value="%SPEED%" step="0.1"
+                               oninput="document.getElementById('runSpeedValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="runSpeedValue">%SPEED%</span> LED/s
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <label for="runLength" class="form-label">Length</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="LENGTH" id="runLength"
+                               min="1" max="5" value="%LENGTH%" step="1"
+                               oninput="document.getElementById('runLengthValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="runLengthValue">%LENGTH%</span> LED
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-12">
+            <div class="border border-2 rounded p-2 h-100">
+                <h5>Color</h5>
+
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <label for="hueFrequency" class="form-label">Hue cycle</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="HUEFREQ" id="hueFrequency"
+                               min="0.03" max="0.50" value="%HUEFREQ%" step="0.01"
+                               oninput="document.getElementById('hueFrequencyValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="hueFrequencyValue">%HUEFREQ%</span> Hz
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
