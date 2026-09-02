@@ -1,0 +1,34 @@
+<div class="container-fluid g-1 my-1">
+  <h3>Laufflaeche 01</h3>
+  <p>
+    Eine virtuelle Flaeche bewegt sich sinusfoermig durch den vermessenen
+    LED-Raum. Zuerst steht sie senkrecht zur X-Achse, danach zur Y-Achse und
+    danach zur Z-Achse. LEDs innerhalb des eingestellten Abstands zur Flaeche
+    leuchten mit voller Helligkeit und Saettigung.
+  </p>
+  <p>
+    Ein Durchlauf bewegt die Flaeche weich von Koordinate 0 bis zum Maximum
+    der jeweiligen Achse und wieder zurueck auf 0. Nach N Durchlaeufen wird
+    zur naechsten Raumachse gewechselt. Der Farbton laeuft unabhaengig davon
+    kontinuierlich durch den gesamten Farbkreis.
+  </p>
+
+  <h4>Parameter</h4>
+  <dl>
+    <dt>Repetitions</dt>
+    <dd>Anzahl der kompletten Hin-und-zurueck-Bewegungen pro Raumachse (1 bis 10).</dd>
+
+    <dt>Plane frequency</dt>
+    <dd>Frequenz der Flaechenbewegung von 0.5 bis 5 Hz.</dd>
+
+    <dt>Hue frequency</dt>
+    <dd>Unabhaengige Frequenz des Farbtonumlaufs von 0.1 bis 2 Hz.</dd>
+
+    <dt>LED distance</dt>
+    <dd>
+      Maximaler euklidischer Abstand einer LED von der aktuellen Flaeche (0.1 bis 1.0).
+      Bei den achsenparallelen Flaechen entspricht dies dem absoluten Abstand
+      der jeweiligen X-, Y- oder Z-Koordinate zur Flaechenposition.
+    </dd>
+  </dl>
+</div>

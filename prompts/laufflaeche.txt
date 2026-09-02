@@ -1,0 +1,6 @@
+jeweils eine Gesamtfläche senkrecht zu x,y oder z leuchtet. Für Fläche senkrecht zu x: sinus-moduliere den wert x (realzahl) von 0 bis xmax mit Frequenz f, alle LEDs, die von dieser Fläche weniger als Abstand d (Euklid) entfernt sind leuchten. Das ganze N mal. Dann Wechsel, das Gleiche wieder für Fläche senkrecht y, N mal mit f. Dann Wechsel, das Gleiche N mal mit f für Fläche senkrecht z.
+Lichtintensität voll, Sättigung voll, unabhängige Modulation des Farbtons durch den Farbkreis mit ft
+Parameter N: Wiederholungen [1..10]
+f: Frequenz [0.5..5]
+ft: Farbtonfrequenz [0.1..2]
+d: LED-Abstand [0.5..4]

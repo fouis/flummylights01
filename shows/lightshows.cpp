@@ -4,7 +4,7 @@
 
 #include "flummylights.h"
 #include "generator.h"
-
+#include "led_positions.h"
 
 void registerLightShows(void)
 {   
@@ -17,6 +17,8 @@ void registerLightShows(void)
     #include "glospa02.inc"
     #include "lauflicht01.inc"
     #include "blinky01.inc"
+    #include "laufflaeche01.inc"
+    #include "laufflaeche02.inc"
     //#include "glospa02diag.inc"
     //#include "comptest.inc"
     

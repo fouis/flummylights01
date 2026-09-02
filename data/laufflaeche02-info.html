@@ -1,0 +1,43 @@
+<div class="container-fluid g-1 my-1">
+  <h3>Laufflaeche 02</h3>
+  <p>
+    Eine virtuelle Flaeche bewegt sich durch den vermessenen 3D-LED-Raum.
+    Anders als bei Laufflaeche 01 ist ihre Orientierung nicht an X, Y oder Z
+    gebunden: die Flaeche steht senkrecht auf einem normierten Richtungsvektor,
+    dessen Richtung sich langsam und weich veraendert.
+  </p>
+  <p>
+    Die Richtungsbewegung ist absichtlich nur begrenzt zufaellig. Zwischen
+    verschiedenen raeumlichen Zwischenrichtungen werden regelmaessig die
+    exakten Hauptachsen (1,0,0), (0,1,0) und (0,0,1) angefahren. Dadurch bleibt
+    die Bewegung abwechslungsreich, besitzt aber immer wieder gut erkennbare
+    Referenzorientierungen.
+  </p>
+  <p>
+    Die Flaeche selbst laeuft sinusfoermig durch die Projektion des gesamten
+    LED-Raums auf ihren aktuellen Normalenvektor. LEDs innerhalb des
+    eingestellten Abstands zur Flaeche leuchten mit voller Helligkeit und
+    Saettigung. Der Farbton laeuft unabhaengig durch den Farbkreis.
+  </p>
+
+  <h4>Parameter</h4>
+  <dl>
+    <dt>Plane frequency</dt>
+    <dd>Frequenz der Hin-und-zurueck-Bewegung der Flaeche von 0.5 bis 5 Hz.</dd>
+
+    <dt>Direction speed</dt>
+    <dd>
+      Geschwindigkeit der langsamen Orientierungsbewegung von 0.02 bis 0.50 /s.
+      Ein Wert von 0.10 entspricht ungefaehr zehn Sekunden pro neuem Richtungsziel.
+    </dd>
+
+    <dt>Hue frequency</dt>
+    <dd>Unabhaengige Frequenz des Farbtonumlaufs von 0.1 bis 2 Hz.</dd>
+
+    <dt>LED distance</dt>
+    <dd>
+      Maximaler euklidischer Abstand einer LED von der aktuellen Flaeche,
+      einstellbar von 0.1 bis 1.0 Raumkoordinaten-Einheiten.
+    </dd>
+  </dl>
+</div>

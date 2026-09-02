@@ -1,0 +1,71 @@
+<form action="/" method="post">
+    <div class="row g-2">
+        <div class="col-lg-6 col-12">
+            <div class="border border-2 rounded p-2 h-100">
+                <h5>Moving plane</h5>
+
+                <div class="row align-items-center mb-2">
+                    <div class="col-4">
+                        <label for="planeFrequency" class="form-label">Plane frequency</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="FREQ" id="planeFrequency"
+                               min="0.5" max="5.0" value="%FREQ%" step="0.1"
+                               oninput="document.getElementById('planeFrequencyValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="planeFrequencyValue">%FREQ%</span> Hz
+                    </div>
+                </div>
+
+                <div class="row align-items-center mb-2">
+                    <div class="col-4">
+                        <label for="directionSpeed" class="form-label">Direction speed</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="DIRSPD" id="directionSpeed"
+                               min="0.02" max="0.50" value="%DIRSPD%" step="0.01"
+                               oninput="document.getElementById('directionSpeedValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="directionSpeedValue">%DIRSPD%</span> /s
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <label for="ledDistance" class="form-label">LED distance</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="DIST" id="ledDistance"
+                               min="0.1" max="1.0" value="%DIST%" step="0.1"
+                               oninput="document.getElementById('ledDistanceValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="ledDistanceValue">%DIST%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-12">
+            <div class="border border-2 rounded p-2 h-100">
+                <h5>Color</h5>
+
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <label for="hueFrequency" class="form-label">Hue frequency</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="range" class="form-range" name="HUEFREQ" id="hueFrequency"
+                               min="0.1" max="2.0" value="%HUEFREQ%" step="0.05"
+                               oninput="document.getElementById('hueFrequencyValue').innerHTML=this.value;">
+                    </div>
+                    <div class="col-2 text-end">
+                        <span id="hueFrequencyValue">%HUEFREQ%</span> Hz
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

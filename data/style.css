@@ -70,3 +70,20 @@ label{ margin-right: 15px; }
 #nav-parameter span {
   color: #f8f9fa;
 }
+
+/* Keep show-specific info text readable on dark page colors. */
+#nav-info,
+#nav-info h1,
+#nav-info h2,
+#nav-info h3,
+#nav-info h4,
+#nav-info h5,
+#nav-info h6,
+#nav-info p,
+#nav-info li,
+#nav-info dt,
+#nav-info dd,
+#nav-info strong,
+#nav-info span {
+  color: #f8f9fa;
+}
